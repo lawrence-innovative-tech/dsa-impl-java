@@ -3,8 +3,8 @@ package com.data.structure.example.backtracking;
 public class OwnNQueenProblem {
 
     public static void main(String[] args) {
-        int n = 4;
-        int backTrackCount = 0, placedQueenCount = 0;
+        int n = 8;
+        int backTrackCount = 0;
         int[] placedQueen = new int[n];
         char[][] board = new char[n][n];
 
@@ -13,7 +13,6 @@ public class OwnNQueenProblem {
                 if (isSafe(board, i, j)) {
                     board[i][j] = 'Q';
                     placedQueen[i] = j;
-                    placedQueenCount++;
                     backTrackCount = 0;
                     break;
                 } else {
@@ -24,7 +23,7 @@ public class OwnNQueenProblem {
                     --i;
 
                     for (int k = i; k >= 0 ; k--) {
-                        if (placedQueen[k] == n) {
+                        if (placedQueen[k] == ( n - 1 )) {
                             board[k][n - 1] = '.';
                             placedQueen[k] = 0;
                         } else {
