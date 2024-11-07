@@ -23,12 +23,7 @@ public class SudokuProblem {
             while (j < sudokuBoard.length) {
 
                 if ( number > sudokuBoard.length) {
-                    j--;
-                    if (j < 0) {
-                        --i;
-                        j = sudokuBoard.length - 1;
-                    }
-                    for (int k = j; k >= -1; k--) {
+                    for (int k = (j - 1); k >= -1; k--) {
                         if (k == -1){
                             --i;
                             k = sudokuBoard.length;
